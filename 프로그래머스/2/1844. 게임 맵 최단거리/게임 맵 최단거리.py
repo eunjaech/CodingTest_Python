@@ -7,9 +7,9 @@ def solution(maps):
     while queue:
         r,c = queue.popleft()
         for dr,dc in [(-1,0),(0,-1), (1,0), (0,1)]:
-            nr, nc = r + dr, c + dc
+            nr, nc = dr + r, dc + c
             if 0<=nr<rows and 0<=nc<cols and maps[nr][nc] == 1:
-                maps[nr][nc] = maps[r][c]+1
+                maps[nr][nc] = maps[r][c] + 1
                 queue.append((nr,nc))
     answer = maps[rows-1][cols-1]
         
